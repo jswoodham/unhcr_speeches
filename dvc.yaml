@@ -1,0 +1,10 @@
+stages:
+  prepare_dataset:
+    cmd: python prepare_dataset.py
+    deps:
+    - data/speeches.json
+    - prepare_dataset.py
+    outs:
+    - data/clean_speeches.json
+
+
