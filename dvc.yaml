@@ -5,6 +5,6 @@ stages:
     - data/speeches.json
     - prepare_dataset.py
     outs:
-    - data/clean_speeches.json
+    - data/cleaned_speeches.json
 
 

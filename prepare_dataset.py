@@ -17,7 +17,7 @@
 import pandas as pd
 import re
 
-df = (pd.read_json("UNHCR speeches/speeches.json"))
+df = (pd.read_json("data/speeches.json"))
 df = df[['author', 'content']]
 
 # +
