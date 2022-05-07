@@ -1,0 +1,24 @@
+# to use: 
+# `conda env update --file env.yaml`
+name: unhcr_speeches
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - ipykernel
+  - dvc
+  - lime
+  - numpy
+  - nbformat
+  - seaborn
+  - scikit-learn
+  - tqdm
+  - pandas
+  - pyarrow
+  - pyjanitor
+  - pip
+  - pip:
+    - datatest
+    - coconut-develop[kernel]
+    - bertopic
+ 
