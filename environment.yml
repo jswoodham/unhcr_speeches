@@ -21,4 +21,5 @@ dependencies:
     - datatest
     - coconut-develop[kernel]
     - bertopic
- 
+    - gensim
+    - pyldavis 

@@ -5,6 +5,43 @@ stages:
     - data/speeches.json
     - prepare_dataset.py
     outs:
-    - data/cleaned_speeches.json
-
-
+    - data/cleaned_speeches
+    params:
+    - preprocessing.stopwords
+  descriptive_analysis:
+    cmd: python descriptive_analysis.py
+    deps:
+    - data/cleaned_speeches
+    - descriptive_analysis.py
+    outs:
+    - data/descriptive
+    params:
+    - preprocessing.stopwords
+    - preprocessing.punctuation
+  topic_model:
+    cmd: python topic_model.py
+    deps:
+    - data/cleaned_speeches
+    - topic_model.py
+    outs:
+    - lda_model
+    - speech.mm
+    - speech.dict
+    params:
+    - preprocessing.stopwords
+    - preprocessing.punctuation
+    - preprocessing.df
+    - lda.passes
+    - lda.iterations
+    - lda.num_topics 
+  topic_over_time:
+    cmd: python topics_over_time.py
+    deps:
+    - lda_model
+    - speech.dict
+    - speech.mm
+    - data/docs_tagged
+    - data/cleaned_speeches
+    - topics_over_time.py
+    outs:
+    - data/topics_over_time
