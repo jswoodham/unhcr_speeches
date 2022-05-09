@@ -27,6 +27,8 @@ stages:
     - lda_model
     - speech.mm
     - speech.dict
+    - data/docs
+    - data/docs_tagged
     params:
     - preprocessing.stopwords
     - preprocessing.punctuation
